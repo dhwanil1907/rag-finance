@@ -1,22 +1,23 @@
 # Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-.Python
 
 # Virtual environment
 .venv/
 venv/
 env/
 
-# Environment variables
+# Environment variables — never commit secrets
 .env
 .env.*
 !.env.example
 
-# ChromaDB (local vector store — too large for git)
+# ChromaDB local vector store — regenerate with python -m ingest.embed
 chroma_db/
+
+# Raw PDFs — too large for git; download separately from SEC EDGAR
+data/raw/*
+!data/raw/.gitkeep
 
 # macOS
 .DS_Store
@@ -24,14 +25,6 @@ chroma_db/
 # IDE
 .vscode/
 .idea/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Distribution / build
-dist/
-build/
-*.egg-info/
 
 # Logs
 *.log
